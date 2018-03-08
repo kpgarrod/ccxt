@@ -1,6 +1,7 @@
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import json from 'rollup-plugin-json';
+import builtins from 'rollup-plugin-node-builtins';
 export default {
   input: 'ccxt.js',
   output: {
@@ -59,6 +60,7 @@ export default {
         // specify indentation for the generated default export —
         // defaults to '\t'
         //indent: '  '
-      })
+      }),
+      builtins()
   ]
 };
